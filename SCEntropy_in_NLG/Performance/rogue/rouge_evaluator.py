@@ -367,13 +367,37 @@ def main():
         txt_output_file = args.output_file.rsplit('.', 1)[0] + '.txt'
         save_grouped_results_txt(results, txt_output_file)
         
-        # Print summary
+        # Print summary with improved formatting
+        print("\n" + "="*60)
+        print("=== ROUGE Evaluation Results ===")
+        print("="*60)
+        print(f"Total sentence pairs: {len(results['reference'])}\n")
+        
+        print("=== Average Scores ===")
+        
+        # Display constrained scores
+        constrained_avg = results.get('constrained_scores', {}).get('average_scores', {})
+        print("Constrained generation:")
+        for rouge_type, scores in constrained_avg.items():
+            print(f"  {rouge_type.upper()}: F1={scores['fmeasure']:.4f}, P={scores['precision']:.4f}, R={scores['recall']:.4f}")
+        
+        # Display unconstrained scores
+        unconstrained_avg = results.get('unconstrained_scores', {}).get('average_scores', {})
+        print("\nUnconstrained generation:")
+        for rouge_type, scores in unconstrained_avg.items():
+            print(f"  {rouge_type.upper()}: F1={scores['fmeasure']:.4f}, P={scores['precision']:.4f}, R={scores['recall']:.4f}")
+        
+        print("="*60)
+        
+        # Get absolute path for display
+        import os
+        output_file_abs = os.path.abspath(txt_output_file)
+        print(f"\n✓ Results saved to: {output_file_abs}")
+        print("Evaluation completed.\n")
+        
+        # Print demo results if in demo mode
         if args.run_demo:
             print_demo_results(results)
-        
-        print("\nEvaluation Summary:")
-        print(f"Total sentence pairs: {len(results['reference'])}")
-        print(f"Results saved to: {txt_output_file}")
         
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)

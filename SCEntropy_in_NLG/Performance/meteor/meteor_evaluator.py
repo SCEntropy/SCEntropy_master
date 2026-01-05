@@ -261,10 +261,21 @@ def main():
             save_results_txt(results, args.output_file)
             
             # Print summary
-            print("\nEvaluation Summary:")
-            print(f"Total sentence pairs: {len(results['reference'])}")
-            print(f"Average unconstrained METEOR score: {results['unconstrained_scores']['average_score']:.4f}")
-            print(f"Average constrained METEOR score: {results['constrained_scores']['average_score']:.4f}")
+            print("\n" + "="*60)
+            print("=== METEOR Evaluation Results ===")
+            print("="*60)
+            print(f"Input file: {args.input_file}")
+            print(f"Total sentence pairs: {len(results['reference'])}\n")
+            
+            print("=== Average Scores ===")
+            print(f"Unconstrained METEOR: {results['unconstrained_scores']['average_score']:.4f}")
+            print(f"Constrained METEOR:   {results['constrained_scores']['average_score']:.4f}")
+            print("="*60)
+            
+            # Get absolute path for display
+            output_file_abs = os.path.abspath(args.output_file)
+            print(f"\n✓ Results saved to: {output_file_abs}")
+            print("Evaluation completed.\n")
         else:
             # Batch mode: process data1.txt to data100.txt
             results = run_batch_evaluation(args)
@@ -273,12 +284,21 @@ def main():
             save_results_txt(results, args.output_file)
             
             # Print summary
-            print("\n" + "="*50)
-            print("Overall Evaluation Summary:")
+            print("\n" + "="*60)
+            print("=== METEOR Batch Evaluation Results ===")
+            print("="*60)
             print(f"Total files processed: {results['total_files_processed']}")
-            print(f"Total sentence pairs: {results['total_sentence_pairs']}")
-            print(f"Overall unconstrained METEOR score: {results['overall_unconstrained_average']:.4f}")
-            print(f"Overall constrained METEOR score: {results['overall_constrained_average']:.4f}")
+            print(f"Total sentence pairs: {results['total_sentence_pairs']}\n")
+            
+            print("=== Overall Average Scores ===")
+            print(f"Unconstrained METEOR: {results['overall_unconstrained_average']:.4f}")
+            print(f"Constrained METEOR:   {results['overall_constrained_average']:.4f}")
+            print("="*60)
+            
+            # Get absolute path for display
+            output_file_abs = os.path.abspath(args.output_file)
+            print(f"\n✓ Results saved to: {output_file_abs}")
+            print("Evaluation completed.\n")
         
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
