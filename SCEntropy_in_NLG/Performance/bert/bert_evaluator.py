@@ -98,6 +98,24 @@ def run_batch_evaluation(args):
         # Determine output filename
         output_file = args.output_file if args.output_file else "bertscore_results_all.txt"
         
+        # Print results to terminal
+        print("\n" + "="*60)
+        print("=== BERTScore Batch Evaluation Results ===")
+        print("="*60)
+        print(f"Model type: {args.model_type}")
+        print(f"Total files processed: {len(all_results)}\n")
+        
+        print("=== Overall Average Scores ===")
+        print("Unconstrained generation:")
+        print(f"  Precision: {avg_unconstrained['precision']:.4f}")
+        print(f"  Recall:    {avg_unconstrained['recall']:.4f}")
+        print(f"  F1:        {avg_unconstrained['f1']:.4f}\n")
+        print("Constrained generation:")
+        print(f"  Precision: {avg_constrained['precision']:.4f}")
+        print(f"  Recall:    {avg_constrained['recall']:.4f}")
+        print(f"  F1:        {avg_constrained['f1']:.4f}")
+        print("="*60)
+        
         # Save results to file
         with open(output_file, "w", encoding="utf-8") as f:
             f.write("=== BERTScore Batch Evaluation Results ===\n")
@@ -120,7 +138,10 @@ def run_batch_evaluation(args):
                 f.write(f"  Unconstrained - P: {result['unconstrained']['precision']:.4f}, R: {result['unconstrained']['recall']:.4f}, F1: {result['unconstrained']['f1']:.4f}\n")
                 f.write(f"  Constrained   - P: {result['constrained']['precision']:.4f}, R: {result['constrained']['recall']:.4f}, F1: {result['constrained']['f1']:.4f}\n")
         
-        print("Evaluation completed.")
+        # Get absolute path for display
+        output_file_abs = os.path.abspath(output_file)
+        print(f"\n✓ Results saved to: {output_file_abs}")
+        print("Evaluation completed.\n")
 
 
 def main():
@@ -177,6 +198,24 @@ Examples:
             else:
                 output_file = args.output_file
             
+            # Print results to terminal
+            print("\n" + "="*60)
+            print("=== BERTScore Evaluation Results ===")
+            print("="*60)
+            print(f"Input file: {args.input_file}")
+            print(f"Model type: {args.model_type}\n")
+            
+            print("Unconstrained generation:")
+            print(f"  Precision: {results['unconstrained']['precision']:.4f}")
+            print(f"  Recall:    {results['unconstrained']['recall']:.4f}")
+            print(f"  F1:        {results['unconstrained']['f1']:.4f}\n")
+            
+            print("Constrained generation:")
+            print(f"  Precision: {results['constrained']['precision']:.4f}")
+            print(f"  Recall:    {results['constrained']['recall']:.4f}")
+            print(f"  F1:        {results['constrained']['f1']:.4f}")
+            print("="*60)
+            
             # Save results to file
             with open(output_file, "w", encoding="utf-8") as f:
                 f.write("=== BERTScore Evaluation Results ===\n")
@@ -198,7 +237,10 @@ Examples:
                 f.write(f"Recall:    {results['constrained']['recall']:.4f}\n")
                 f.write(f"F1:        {results['constrained']['f1']:.4f}\n")
             
-            print("Evaluation completed.")
+            # Get absolute path for display
+            output_file_abs = os.path.abspath(output_file)
+            print(f"\n✓ Results saved to: {output_file_abs}")
+            print("Evaluation completed.\n")
         else:
             # Batch mode: process data1.txt to data100.txt
             run_batch_evaluation(args)
