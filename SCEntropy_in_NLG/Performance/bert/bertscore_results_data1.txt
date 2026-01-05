@@ -1,0 +1,18 @@
+=== BERTScore Evaluation Results ===
+Input file: ../input/data1.txt
+Model type: bert-base-uncased
+
+Reference text:
+Compare the panel's responses to the autonomous driving system's decisionmaking algorithms.
+
+Unconstrained generation:
+Analyze how the committee's feedback aligns with the self-driving car's computational reasoning processes.
+Precision: 0.7372
+Recall:    0.7665
+F1:        0.7516
+
+Constrained generation:
+The analysis involves comparing how the panel's responses align with or differ from the decisionmaking algorithms used by the autonomous driving system.
+Precision: 0.7619
+Recall:    0.8536
+F1:        0.8052
