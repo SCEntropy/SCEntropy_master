@@ -131,10 +131,10 @@ python scripts/train_and_extract.py --dataset cifar10 --epochs 10
 # Display clustering hierarchy (non-binary tree structure)
 python scripts/print_clustering_hierarchy.py
 
-# Run Hierarchical Semantic Coherence (HSC) evaluation
+# Run Hierarchical Semantic Coherence (HSC) evaluation (After running python scripts/run_experiment.py --dataset cifar100 --epochs 10 --entropy_threshold 6.0)
 python scripts/run_hsc_evaluation.py
 
-# Run Superclass Entropy Robustness Evaluation
+# Run Superclass Entropy Robustness Evaluation (After running python scripts/run_experiment.py --dataset cifar100 --epochs 10 --entropy_threshold 6.0)
 python scripts/run_superclass_entropy.py
 ```
 
