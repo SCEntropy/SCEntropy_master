@@ -134,6 +134,9 @@ Thumbs.db
 Thumbs.db:encryptable
 
 # Output files
-*.txt
 output.txt
+*_dendrograms.txt
 100.11.txt
+
+# Exception: Keep example QUESTION files
+!QUESTION*.txt

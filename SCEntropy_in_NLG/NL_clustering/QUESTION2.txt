@@ -1,0 +1,36 @@
+###Question###
+How should global digital tax reform address the conflict between value creation and profit shifting in the platform economy?
+
+###Raw data###
+Label 0：Global digital tax reform should address the conflict between value creation and profit shifting in the platform economy by implementing a multifaceted approach.
+Label 1：First, it must establish a clear definition of value creation that includes the role of usergenerated content and data.
+Label 2：Second, the reform should introduce a digital presence indicator to attribute taxing rights to countries where significant economic activity occurs, regardless of where the company is legally registered.
+Label 3：Third, adopt a significant economic presence (SEP) test to determine when a digital business has a sufficient connection to a country for tax purposes.
+Label 4：Fourth, introduce a global minimum tax rate to prevent profit shifting by ensuring companies pay a certain percentage of their income in countries where they generate value.
+Label 5：Fifth, create a multilateral framework for dispute resolution to prevent double taxation and ensure fair treatment.
+Label 6：Sixth, develop guidelines for transfer pricing to prevent artificial allocation of profits.
+Label 7：Finally, ensure transparency through countrybycountry reporting to allow tax authorities to monitor and verify compliance with the new rules.
+
+###Constrained generation results###
+Label 0：Global digital tax reform should address the conflict between value creation and profit shifting in the platform economy by implementing a multifaceted approach.
+Label 1：First, it must establish a clear definition of value creation that includes the role of usergenerated content and data.
+Label 2：Second, the reform should introduce a digital presence indicator to attribute taxing rights to countries where significant economic activity occurs, regardless of where the company is legally registered.
+Label 3：Third, adopt a significant economic presence (SEP) test to determine when a digital business has a sufficient connection to a country for tax purposes.
+Label 4：Fourth, introduce a global minimum tax rate to prevent profit shifting by ensuring companies pay a certain percentage of their income in countries where they generate value.
+Label 5：Fifth, create a multilateral framework for dispute resolution to prevent double taxation and ensure fair treatment.
+Label 6：Sixth, develop guidelines for transfer pricing to prevent artificial allocation of profits.
+Label 7：Finally, ensure transparency through countrybycountry reporting to allow tax authorities to monitor and verify compliance with the new rules.
+Label 8：Finally, transparency must be ensured by implementing countrybycountry reporting.
+Label 9：This specific reporting mechanism will allow tax authorities to effectively monitor and verify compliance with the newly established rules.
+
+###Unconstrained generation result###
+Label 0：Global digital tax reform should address the conflict between value creation and profit shifting in the platform economy by implementing a multifaceted approach.
+Label 1：First, it must establish a clear definition of value creation that includes the role of usergenerated content and data.
+Label 2：Second, the reform should introduce a digital presence indicator to attribute taxing rights to countries where significant economic activity occurs, regardless of where the company is legally registered.
+Label 3：Third, adopt a significant economic presence (SEP) test to determine when a digital business has a sufficient connection to a country for tax purposes.
+Label 4：Fourth, introduce a global minimum tax rate to prevent profit shifting by ensuring companies pay a certain percentage of their income in countries where they generate value.
+Label 5：Fifth, create a multilateral framework for dispute resolution to prevent double taxation and ensure fair treatment.
+Label 6：Sixth, develop guidelines for transfer pricing to prevent artificial allocation of profits.
+Label 7：Finally, ensure transparency through countrybycountry reporting to allow tax authorities to monitor and verify compliance with the new rules.
+Label 8：To wrap up, we must establish operational openness via cross-border disclosure protocols, empowering fiscal supervision agencies to track and confirm adherence to the updated regulatory framework.
+Label 9： Lastly, it is critical to achieve procedural clarity by deploying nation-specific disclosure systems, which allows financial regulatory institutions to monitor and verify alignment with the revised rule set.
